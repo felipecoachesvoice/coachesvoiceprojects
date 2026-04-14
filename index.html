@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaches' Voice × FUTEC — Propuesta Renovación 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; background: #f5f4f0; line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .nav { background: #0f1a2e; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: #e63946; }
+  .nav-name { color: #fff; font-size: 14px; font-weight: 500; }
+  .nav-badge { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+
+  .hero { background: #0f1a2e; padding: 72px 40px 64px; text-align: center; border-radius: 16px; margin-bottom: 2.5rem; }
+  .hero-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 24px; padding: 6px 16px; margin-bottom: 28px; }
+  .hero-pill span { color: #fff; font-size: 13px; font-weight: 500; }
+  .hero h1 { font-size: 38px; font-weight: 500; color: #fff; line-height: 1.15; margin-bottom: 18px; }
+  .hero h1 em { font-style: normal; color: #4fc3f7; }
+  .hero p { color: rgba(255,255,255,0.7); font-size: 17px; max-width: 580px; margin: 0 auto 32px; }
+  .hero-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .hbadge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 12px; padding: 5px 14px; border-radius: 20px; }
+
+  .invest-hero { background: #1a2f0f; border-radius: 16px; padding: 32px; margin-bottom: 16px; }
+  .invest-hero .eyebrow { color: #aed581; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px; }
+  .invest-hero .big { font-size: 52px; font-weight: 500; color: #fff; line-height: 1; margin-bottom: 8px; }
+  .invest-hero p { color: rgba(255,255,255,0.6); font-size: 14px; }
+
+  .invest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 8px; }
+  .invest-item { background: #fff; border: 0.5px solid #e5e3db; border-radius: 14px; padding: 20px; }
+  .invest-item .amt { font-size: 26px; font-weight: 500; color: #e65100; }
+  .invest-item .lbl { font-size: 14px; font-weight: 500; margin: 6px 0 4px; color: #1a1a1a; }
+  .invest-item .desc { font-size: 13px; color: #666; line-height: 1.5; }
+  .invest-item .itag { display: inline-block; background: #fff3e0; color: #e65100; font-size: 11px; padding: 2px 8px; border-radius: 6px; margin-top: 8px; }
+
+  .section { margin-bottom: 2.5rem; }
+  .section-label { font-size: 11px; font-weight: 500; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+  .section-title { font-size: 22px; font-weight: 500; margin-bottom: 8px; }
+  .section-sub { font-size: 14px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+  .divider { height: 0.5px; background: #e5e3db; margin: 2.5rem 0; }
+
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .card { background: #fff; border: 0.5px solid #e5e3db; border-radius: 14px; padding: 20px; }
+  .card-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+  .card h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+  .card p { font-size: 13px; color: #666; line-height: 1.5; }
+
+  .metric { background: #f0efe9; border-radius: 10px; padding: 16px; text-align: center; }
+  .metric-val { font-size: 26px; font-weight: 500; }
+  .metric-label { font-size: 11px; color: #888; margin-top: 4px; line-height: 1.4; }
+
+  .table-wrap { background: #fff; border: 0.5px solid #e5e3db; border-radius: 14px; overflow: hidden; margin-bottom: 14px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px; }
+  th { background: #f5f4f0; padding: 10px 14px; text-align: left; font-weight: 500; font-size: 12px; color: #888; white-space: nowrap; }
+  td { padding: 10px 14px; border-top: 0.5px solid #e5e3db; }
+  .tr-total td { background: #f5f4f0; font-weight: 500; font-size: 14px; }
+  .tr-highlight td { background: #e8f5e9; color: #1b5e20; font-weight: 500; }
+
+  .badge { display: inline-flex; align-items: center; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 10px; }
+  .bg-green { background: #e8f5e9; color: #1b5e20; }
+  .bg-blue { background: #e3f2fd; color: #0d47a1; }
+  .bg-amber { background: #fff8e1; color: #e65100; }
+
+  .vs-grid { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 12px; align-items: start; }
+  .vs-col { background: #fff; border: 0.5px solid #e5e3db; border-radius: 14px; padding: 20px; }
+  .vs-col.featured { border: 2px solid #378ADD; }
+  .vs-col h4 { font-size: 14px; font-weight: 500; margin-bottom: 14px; }
+  .vs-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 6px; }
+  .vs-divider { display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: #999; padding-top: 30px; }
+  .check { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 13px; line-height: 1.4; color: #444; }
+  .ci { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-size: 10px; font-weight: 700; }
+  .ci-yes { background: #c8e6c9; color: #1b5e20; }
+  .ci-no { background: #ffcdd2; color: #b71c1c; }
+
+  .europe-card { background: linear-gradient(135deg, #1a237e, #283593); border-radius: 14px; padding: 28px; margin-top: 16px; }
+  .europe-card h3 { color: #fff; font-size: 16px; font-weight: 500; margin-bottom: 10px; }
+  .europe-card p { color: rgba(255,255,255,0.75); font-size: 14px; line-height: 1.6; }
+  .europe-stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .europe-stat { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 10px 16px; }
+  .europe-stat .num { font-size: 22px; font-weight: 500; color: #fff; }
+  .europe-stat .lbl { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+  .epill { display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 11px; padding: 4px 12px; border-radius: 20px; margin: 3px 4px 0 0; }
+
+  .funnel { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+  .funnel-row { display: flex; align-items: center; gap: 12px; }
+  .funnel-label { font-size: 12px; color: #888; width: 110px; text-align: right; flex-shrink: 0; }
+  .funnel-bar-wrap { flex: 1; height: 36px; background: #f0efe9; border-radius: 8px; overflow: hidden; }
+  .funnel-bar { height: 100%; display: flex; align-items: center; padding-left: 14px; font-size: 12px; font-weight: 500; color: #fff; border-radius: 8px; }
+  .funnel-val { font-size: 12px; font-weight: 500; width: 80px; }
+
+  .hb-green { background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 14px; padding: 22px; margin-bottom: 16px; }
+  .hb-green h3 { color: #1b5e20; font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+  .hb-green p { color: #2e7d32; font-size: 14px; line-height: 1.5; }
+
+  .tl { display: flex; flex-direction: column; }
+  .tl-item { display: flex; gap: 16px; }
+  .tl-line { display: flex; flex-direction: column; align-items: center; }
+  .tl-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+  .tl-conn { width: 2px; flex: 1; background: #e5e3db; margin: 4px 0; min-height: 20px; }
+  .tl-c { padding-bottom: 22px; flex: 1; }
+  .tl-c h4 { font-size: 15px; font-weight: 500; }
+  .tl-c p { font-size: 13px; color: #888; margin-top: 3px; line-height: 1.4; }
+
+  .cta { background: #0f1a2e; border-radius: 16px; padding: 52px 40px; text-align: center; }
+  .cta h2 { font-size: 26px; font-weight: 500; color: #fff; margin-bottom: 12px; }
+  .cta p { color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 28px; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .cta-contact { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn { display: inline-block; background: #e63946; color: #fff; font-size: 14px; font-weight: 500; padding: 13px 28px; border-radius: 10px; }
+  .cta-btn-outline { display: inline-block; background: transparent; color: #fff; font-size: 14px; font-weight: 500; padding: 13px 28px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.3); }
+  .note { font-size: 11px; color: #aaa; margin-top: 8px; line-height: 1.5; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 48px 24px; }
+    .hero h1 { font-size: 26px; }
+    .invest-hero .big { font-size: 36px; }
+    .vs-grid { grid-template-columns: 1fr; }
+    .vs-divider { padding-top: 0; }
+    .grid2, .grid3, .grid4 { grid-template-columns: 1fr; }
+    .funnel-label { width: 80px; font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="nav-dot"></div>
+    <span class="nav-name">Coaches' Voice</span>
+  </div>
+  <span class="nav-badge">Propuesta FUTEC · Renovación 2026</span>
+</nav>
+
+<div class="container">
+
+  <div class="hero">
+    <div class="hero-pill"><div class="nav-dot"></div><span>Coaches' Voice × FUTEC — Renovación 2026</span></div>
+    <h1>El socio que <em>invierte contigo</em><br>en el fútbol peruano</h1>
+    <p>Más de $460.000 de inversión directa en plataforma, tecnología, equipamiento y experiencia internacional — sin coste para la FPF.</p>
+    <div class="hero-badges">
+      <span class="hbadge">Licencias C · B · A · Pro</span>
+      <span class="hbadge">Sello CONMEBOL</span>
+      <span class="hbadge">Copa Perú / LINFA</span>
+      <span class="hbadge">100 cámaras VEO</span>
+      <span class="hbadge">27 presidentes a Europa</span>
+      <span class="hbadge">LMS propia $250k</span>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div style="margin-bottom:2.5rem;">
+    <div style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">Conoce el proyecto</div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;background:#0f1a2e;">
+      <iframe
+        src="https://player.vimeo.com/video/1178752599?badge=0&autopause=0&player_id=0&app_id=58479"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;"
+        title="Coaches' Voice × FUTEC — Propuesta 2026">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Inversión que asume Coaches' Voice — sin coste para la FPF</div>
+    <div class="invest-hero">
+      <div class="eyebrow">Inversión total comprometida por Coaches' Voice</div>
+      <div class="big">~$460.000</div>
+      <p>En plataforma tecnológica propia, equipamiento de vídeo y experiencia formativa internacional. Todo a cargo de Coaches' Voice, sin desembolso alguno para la Federación.</p>
+    </div>
+    <div class="invest-grid">
+      <div class="invest-item">
+        <div class="amt">~$250.000</div>
+        <div class="lbl">Plataforma LMS propia</div>
+        <div class="desc">7 años de desarrollo, implementación y mantenimiento del campus virtual. Personalizado para FUTEC, con gestión de alumnos, contenido SCORM y supervisión en tiempo real.</div>
+        <span class="itag">Desarrollo + 7 años de operación</span>
+      </div>
+      <div class="invest-item">
+        <div class="amt">~$150.000</div>
+        <div class="lbl">100 cámaras VEO</div>
+        <div class="desc">Una cámara por cada equipo clasificado a fase departamental en Copa Perú. Análisis de vídeo automático para equipos y selecciones peruanas.</div>
+        <span class="itag">~$1.500/unidad × 100</span>
+      </div>
+      <div class="invest-item">
+        <div class="amt">~$59.400</div>
+        <div class="lbl">Viaje formativo a Europa</div>
+        <div class="desc">27 presidentes de ligas departamentales. 3 días en España o UK con visitas a clubes de élite europeos. Vuelos + hotel + actividades 100% incluidos.</div>
+        <span class="itag">~$2.200/persona × 27</span>
+      </div>
+    </div>
+    <p class="note">* El coste de la LMS es un estimativo basado en desarrollo inicial + mantenimiento acumulado a lo largo de 7 años de operación. Las cámaras VEO y el viaje son costes directos asumidos por Coaches' Voice para el proyecto Copa Perú.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-label">¿Por qué Coaches' Voice y no hacerlo solos?</div>
+    <div class="section-title">La pregunta clave — respondida</div>
+    <div class="section-sub">Gestionar la Copa Perú internamente implica construir desde cero toda la infraestructura tecnológica, operativa y de contenido. Esto es lo que cambia con Coaches' Voice.</div>
+    <div class="vs-grid">
+      <div class="vs-col">
+        <div class="vs-label">Sin Coaches' Voice</div>
+        <h4>FPF lo gestiona sola</h4>
+        <div class="check"><div class="ci ci-no">✕</div><span>LMS a construir desde cero — inversión de $250.000+ y años de desarrollo</span></div>
+        <div class="check"><div class="ci ci-no">✕</div><span>Sin cámaras VEO — los equipos no tienen análisis de vídeo profesional</span></div>
+        <div class="check"><div class="ci ci-no">✕</div><span>Sin viaje formativo — presidentes sin experiencia internacional</span></div>
+        <div class="check"><div class="ci ci-no">✕</div><span>Sin contenido de élite para los entrenadores de los equipos</span></div>
+        <div class="check"><div class="ci ci-no">✕</div><span>Toda la inversión operativa recae en la FPF</span></div>
+        <div class="check"><div class="ci ci-no">✕</div><span>Sin red global de los mejores profesionales del fútbol mundial</span></div>
+      </div>
+      <div class="vs-divider">vs</div>
+      <div class="vs-col featured">
+        <div class="vs-label" style="color:#1565c0;">Con Coaches' Voice</div>
+        <h4>Alianza estratégica</h4>
+        <div class="check"><div class="ci ci-yes">✓</div><span>LMS valorada en $250.000 disponible de inmediato y a coste cero para la FPF</span></div>
+        <div class="check"><div class="ci ci-yes">✓</div><span>100 cámaras VEO instaladas — análisis profesional para todos los equipos</span></div>
+        <div class="check"><div class="ci ci-yes">✓</div><span>27 presidentes viajan 3 días a España o UK con visitas a clubes de élite</span></div>
+        <div class="check"><div class="ci ci-yes">✓</div><span>Contenido de los mejores entrenadores y profesionales del mundo</span></div>
+        <div class="check"><div class="ci ci-yes">✓</div><span>10% de todos los ingresos generados van a la FPF como patrocinio</span></div>
+        <div class="check"><div class="ci ci-yes">✓</div><span>Red global: conexión directa con el fútbol europeo de élite</span></div>
+      </div>
+    </div>
+    <div class="europe-card">
+      <h3>Viaje formativo a Europa — experiencia única para 27 presidentes</h3>
+      <p>Todos los presidentes de las ligas departamentales participantes en la Copa Perú tendrán acceso a un viaje formativo organizado y financiado íntegramente por Coaches' Voice. Visitas a clubes de élite, formación directa con los mejores profesionales del fútbol europeo.</p>
+      <div class="europe-stats">
+        <div class="europe-stat"><div class="num">27</div><div class="lbl">presidentes incluidos</div></div>
+        <div class="europe-stat"><div class="num">3 días</div><div class="lbl">en España o UK</div></div>
+        <div class="europe-stat"><div class="num">$0</div><div class="lbl">coste para la FPF</div></div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="epill">Clubes de élite europeos</span>
+        <span class="epill">Formación con expertos internacionales</span>
+        <span class="epill">Red global Coaches' Voice</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-label">El negocio de las licencias — lo que FUTEC genera</div>
+    <div class="section-title">Ingresos por formación en un ciclo de 2 años</div>
+    <div class="section-sub">3 ediciones/año de Licencia C, 2/año de B, 1/año de A y 1 edición de PRO cada 2 años. Precios publicados en futec.pe.</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Licencia</th><th>Precio (S/)</th><th>Precio (USD ~)</th><th>Ed./año</th><th>Ediciones / 2 años</th><th>Alumnos est.</th><th>Ingresos (S/)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Licencia C</td><td>S/ 2.100</td><td>~$560</td><td>3</td><td><strong>6</strong></td><td>720</td><td><strong>S/ 1.512.000</strong></td></tr>
+          <tr><td>Licencia B</td><td>S/ 5.200</td><td>~$1.387</td><td>2</td><td><strong>4</strong></td><td>800</td><td><strong>S/ 4.160.000</strong></td></tr>
+          <tr><td>Licencia A</td><td>S/ 6.700</td><td>~$1.787</td><td>1</td><td><strong>2</strong></td><td>160</td><td><strong>S/ 1.072.000</strong></td></tr>
+          <tr><td>Licencia PRO</td><td>S/ 10.000</td><td>~$2.667</td><td>—</td><td><strong>1</strong></td><td>40</td><td><strong>S/ 400.000</strong></td></tr>
+          <tr class="tr-total"><td colspan="4"><strong>Total bruto 2 años</strong></td><td><strong>13 ediciones</strong></td><td><strong>1.720 alumnos</strong></td><td><strong>S/ 7.144.000 (~$1,9M)</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid4">
+      <div class="metric"><div class="metric-val" style="color:#1565c0;">S/ 7,14M</div><div class="metric-label">Ingresos brutos por licencias (2 años)</div></div>
+      <div class="metric"><div class="metric-val" style="color:#2e7d32;">S/ 3,57M</div><div class="metric-label">Media anual de ingresos</div></div>
+      <div class="metric"><div class="metric-val" style="color:#6a1b9a;">1.720</div><div class="metric-label">Alumnos formados por ciclo</div></div>
+      <div class="metric"><div class="metric-val" style="color:#e65100;">~$1,9M</div><div class="metric-label">Equivalente USD (~3,75 S//$)</div></div>
+    </div>
+    <p class="note" style="margin-top:12px;">* La LMS gratuita y la metodología SCORM reducen el coste operativo por edición, mejorando directamente el margen de la FPF.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-label">Propuesta de valor para las licencias FUTEC</div>
+    <div class="grid2">
+      <div class="card">
+        <div class="card-icon" style="background:#e3f2fd;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" fill="#1565c0"/></svg></div>
+        <h3>Sello CONMEBOL garantizado</h3>
+        <p>7 años construyendo el sistema. Contenido, metodología y docentes ya validados. La FPF mantiene su acreditación sin ningún riesgo.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:#f3e5f5;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z" fill="#6a1b9a"/></svg></div>
+        <h3>LMS propia — $250.000 de valor, $0 para la FPF</h3>
+        <p>7 años de desarrollo e inversión en una plataforma robusta. La renovación pendiente con el proveedor actual desaparece completamente.</p>
+        <div style="margin-top:10px;"><span class="badge bg-green">Ahorro directo en 2026</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:#e8f5e9;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="#1b5e20"/></svg></div>
+        <h3>Metodología SCORM innovadora</h3>
+        <p>Contenido asincrónico de alto impacto. Mayor retención del aprendizaje, menos dependencia de webinars y menor coste por edición.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:#fff3e0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="#e65100"/></svg></div>
+        <h3>Los mejores profesionales del mundo</h3>
+        <p>Red global de entrenadores y especialistas. FUTEC accede a docentes y contenido que no podría contratar de forma independiente.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-label">Patrocinio — Copa Perú genera ingresos adicionales para la FPF</div>
+    <div class="hb-green">
+      <h3>10% de todos los ingresos de Copa Perú van directamente a la FPF</h3>
+      <p>Transferencia trimestral de Coaches' Voice a la Federación. Adicional a cualquier retribución pactada por licencias. Cuanto más crece el proyecto, más recibe la FPF.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Equipos inscritos</th><th>Ingresos totales ($300/equipo)</th><th>Patrocinio FPF (10%)</th><th>Escenario</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2.000</td><td>$600.000</td><td><strong>$60.000</strong></td><td><span class="badge bg-blue">Conservador</span></td></tr>
+          <tr><td>5.000</td><td>$1.500.000</td><td><strong>$150.000</strong></td><td><span class="badge bg-blue">Moderado</span></td></tr>
+          <tr><td>10.000</td><td>$3.000.000</td><td><strong>$300.000</strong></td><td><span class="badge bg-amber">Optimista</span></td></tr>
+          <tr class="tr-highlight"><td>20.000</td><td>$6.000.000</td><td><strong>$600.000</strong></td><td><span class="badge bg-green">Máximo potencial</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">* Basado en $300/equipo/temporada. El patrocinio es adicional al acuerdo de licencias y se transfiere trimestralmente.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-label">Ecosistema Copa Perú — estructura y tecnología</div>
+    <div class="funnel">
+      <div class="funnel-row"><span class="funnel-label">Fase distrital</span><div class="funnel-bar-wrap"><div class="funnel-bar" style="background:#1565c0;width:100%;">~20.000 equipos · $300/equipo</div></div><span class="funnel-val" style="color:#1565c0;">$6M pot.</span></div>
+      <div class="funnel-row"><span class="funnel-label">Fase provincial</span><div class="funnel-bar-wrap"><div class="funnel-bar" style="background:#1976d2;width:68%;">Equipos clasificados</div></div><span class="funnel-val"></span></div>
+      <div class="funnel-row"><span class="funnel-label">Departamental</span><div class="funnel-bar-wrap"><div class="funnel-bar" style="background:#42a5f5;width:38%;">Mejores equipos + 100 VEO</div></div><span class="funnel-val"></span></div>
+      <div class="funnel-row"><span class="funnel-label">Final nacional</span><div class="funnel-bar-wrap"><div class="funnel-bar" style="background:#90caf9;width:10%;"><span style="color:#0d47a1;">Élite</span></div></div><span class="funnel-val"></span></div>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <div class="card-icon" style="background:#e8eaf6;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="#3949ab"/></svg></div>
+        <h3>100 cámaras VEO</h3>
+        <p>Una por equipo clasificado a departamental. Análisis automático de vídeo para equipos y selecciones. Coste 100% asumido por Coaches' Voice.</p>
+        <div style="margin-top:10px;"><span class="badge bg-green">$150.000 invertidos</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:#e0f7fa;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z" fill="#00838f"/></svg></div>
+        <h3>Portal Copa Perú</h3>
+        <p>Resultados en tiempo real, registro de equipos con pasarela de pago, clasificaciones y vídeos VEO para presidentes de distrito.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:#fce4ec;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z" fill="#c62828"/></svg></div>
+        <h3>Plataforma tecnológica</h3>
+        <p>Infraestructura robusta para gestionar 20.000 equipos. Escalable desde la fase distrital hasta la gran final nacional.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-label">Hoja de ruta — renovación diciembre 2026</div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-line"><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-conn"></div></div><div class="tl-c"><h4>Q3 2026 — Presentación y negociación</h4><p>Entrega de propuesta formal y negociación de los términos del nuevo contrato.</p></div></div>
+      <div class="tl-item"><div class="tl-line"><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-conn"></div></div><div class="tl-c"><h4>Diciembre 2026 — Firma de renovación</h4><p>Nuevo contrato 2027–2029. LMS gratuita, Copa Perú, VEO y patrocinio integrados.</p></div></div>
+      <div class="tl-item"><div class="tl-line"><div class="tl-dot" style="background:#43a047;"></div><div class="tl-conn"></div></div><div class="tl-c"><h4>Q1 2027 — Lanzamiento Copa Perú digital</h4><p>Portal en producción, registro abierto, primeras cámaras VEO instaladas, viaje a Europa confirmado para los 27 presidentes.</p></div></div>
+      <div class="tl-item"><div class="tl-line"><div class="tl-dot" style="background:#7b1fa2;"></div></div><div class="tl-c" style="padding-bottom:0;"><h4>2027+ — Escala y patrocinio acumulativo</h4><p>Transferencias trimestrales a la FPF. Hasta $600.000/año en escenario de máximo potencial.</p></div></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>Un socio que pone $460.000 sobre la mesa</h2>
+    <p>LMS propia valorada en $250.000, 100 cámaras VEO, viaje a Europa para 27 presidentes, los mejores profesionales del mundo — y el 10% de todo lo generado vuelve a la FPF.</p>
+    <div class="cta-contact">
+      <a href="/cdn-cgi/l/email-protection#69030800040c290a06080a010c1a1f06000a0c470a0604" class="cta-btn">Contactar a Coaches' Voice</a>
+      <a href="https://coachesvoice.com" class="cta-btn-outline" target="_blank">coachesvoice.com</a>    </div>
+  </div>
+
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+</body>
+</html>
